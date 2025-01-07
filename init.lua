@@ -855,22 +855,21 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     init = function()
-    require('catppuccin')
-    .setup {
-      flavour = 'mocha',
-      transparent_background = false,
-      integrations = {
-        cmp = true,
-        telescope = true,
-        gitsigns = true,
-        mini = true,
-      },
-    }
+      require('catppuccin').setup {
+        flavour = 'mocha',
+        transparent_background = false,
+        integrations = {
+          cmp = true,
+          telescope = true,
+          gitsigns = true,
+          mini = true,
+        },
+      }
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
-    -- Highlight todo, notes, etc in comments
-    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
